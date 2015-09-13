@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <!-- build:js assets/js/jq-mat.min.js -->
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/materialize.min.js"></script>
+    <!-- endbuild -->
+
+    <!-- build:js assets/js/ang-angrout.min.js -->
+    <script src="assets/js/angular.min.js"></script>
+    <script src="assets/js/angular-route.min.js"></script>
+    <!-- endbuild -->
+
+    <!-- build:js assets/js/app.min.js -->
+    <script src="assets/js/app.js"></script>
+    <!-- endbuild -->
+
+    <!-- build:css assets/css/app.min.css -->
+    <link rel="stylesheet" href="assets/css/materialize.min.css"/>
+    <link rel="stylesheet" href="assets/css/weather-icons.min.css"/>
+    <link rel="stylesheet" href="assets/css/weather-icons-wind.min.css"/>
+    <link rel="stylesheet" href="assets/css/app.css"/>
+    <!-- endbuild -->
+
+    <!-- LOAD FONT -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <title>My widget</title>
+
+
+
+</head>
+<body ng-app="app">
+
+    <nav class="blue-grey darken-1">
+        <div class="nav-wrapper">
+            <a ng-href="#/" class="brand-logo clpadding">My widget</a>
+            <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+            <ul id="nav-mobile" class="right hide-on-med-and-down">
+                <li><a ng-href="#/"><i class="material-icons left">list</i> ToDo List</a></li>
+                <li><a ng-href="#/meteo"><i class="material-icons left">language</i> Météo</a></li>
+            </ul>
+            <!-- MENU MOBILE -->
+            <ul class="side-nav" id="mobile-demo">
+                <li><a ng-href="#/"><i class="material-icons left">list</i> ToDo List</a></li>
+                <li><a ng-href="#/meteo"><i class="material-icons left">language</i> Météo</a></li>
+            </ul>
+        </div>
+    </nav>
+
+
+   <ng-view></ng-view>
+
+
+</body>
+</html>

@@ -1,0 +1,46 @@
+<div class="container">
+
+    <br/>
+
+    <form ng-submit="search(ville)">
+        <div class="row">
+            <div class="input-field">
+                <i class="material-icons prefix">add</i>
+                <input name="ville" id="ville" type="text" class="validate" ng-model="ville.name">
+                <label class="active" for="ville">First Name</label>
+            </div>
+        </div>
+        <button type="submit" class="waves-effect waves-light btn-large">Rechercher</button>
+    </form>
+
+    <br/>
+
+    <div class="col s12 center" ng-if="load">
+
+        <div class="preloader-wrapper big active">
+            <div class="spinner-layer spinner-blue-only">
+                <div class="circle-clipper left">
+                    <div class="circle"></div>
+                </div><div class="gap-patch">
+                <div class="circle"></div>
+            </div><div class="circle-clipper right">
+                <div class="circle"></div>
+            </div>
+            </div>
+        </div>
+
+    </div>
+
+    <ul class="collection with-header" ng-if="list">
+        <li class="collection-header"><h4>Meteo : {{datas.city.name}}/{{datas.city.country}}</h4></li>
+        <li class="collection-item avatar" ng-repeat="data in datas.list">
+
+            <span class="title "><h5>{{data.dt*1000 | date : 'EEE'}} {{data.dt*1000 | date : 'dd/MM'}}</h5></span>
+            <p>{{data.temp.min | number : 0}}&deg;C/{{data.temp.max | number : 0}}&deg;C <br>
+                Pression: {{ data.pressure | number : 0 }} hPa
+            </p>
+            <img src="http://openweathermap.org/img/w/{{data.weather[0].icon}}.png" class="secondary-content" height="80%"/>
+        </li>
+    </ul>
+
+</div>
