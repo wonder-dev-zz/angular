@@ -50,7 +50,7 @@ $(document).ready(function(){
         $scope.load = true ;
         $scope.list = false ;
 
-        var url = "http://api.openweathermap.org/data/2.5/forecast/daily?q=Paris&mode=json&units=metric&cnt=10";
+        var url = "http://api.openweathermap.org/data/2.5/forecast/daily?q=Paris&mode=json&units=metric&cnt=10&appid=ae926d29f3a41f936bfc04f8547339d5";
 
         $scope.ville = {name : "Paris"} ;
 
@@ -71,7 +71,7 @@ $(document).ready(function(){
             $scope.list = true ;
 
             var ville = ville.name ;
-            var url = "http://api.openweathermap.org/data/2.5/forecast/daily?q="+ ville +"&mode=json&units=metric&cnt=10";
+            var url = "http://api.openweathermap.org/data/2.5/forecast/daily?q="+ ville +"&mode=json&units=metric&cnt=10&appid=ae926d29f3a41f936bfc04f8547339d5";
 
             $http.get(url)
                 .success(function(response){
